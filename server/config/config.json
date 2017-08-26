@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "password": "root",
+    "username": "root",
+    "database": "itconference",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "db": {
+      "dbUrl": "mysql://root:@localhost:3306/itconference",
+      "password": "root"
+
+    }
+  },
+  "prod": {
+    "password": "root",
+    "username": "root",
+    "database": "itconference",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "db": {
+      "dbUrl": "mysql://root:@localhost:3306/itconference",
+      "password": "root"
+    }
+  }
+}
