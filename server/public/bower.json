@@ -14,7 +14,6 @@
     "requirejs": "latest",
     "requirejs-domready": "latest",
     "international-phone-number": "^0.0.16",
-    "underscore": "^1.8.3",
-    "angular-trix": "^1.0.2"
+    "underscore": "^1.8.3"
   }
 }

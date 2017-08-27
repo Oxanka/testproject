@@ -14,9 +14,7 @@
     "npm": "3.8.3"
   },
   "dependencies": {
-    "angular-spinners": "^5.0.4",
     "async": "^2.4.1",
-    "aws-sdk": ">= 2.0.9",
     "binaryjs": "^0.2.1",
     "bluebird": "^3.4.0",
     "body-parser": "~1.13.2",
@@ -52,12 +50,6 @@
     "morgan": "^1.7.0",
     "mysql": "^2.10.2",
     "node-uuid": ">= 1.4.1",
-    "nodemailer": "^4.0.1",
-    "nodemailer-smtp-transport": "^2.7.4",
-    "nodemailer-templation": "^0.1.4",
-    "passport": "^0.3.2",
-    "passport-facebook": "^2.1.0",
-    "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "pg": "^4.5.3",
     "pg-hstore": "^2.3.2",
@@ -67,7 +59,6 @@
     "sequelize-cli": "^2.8.0",
     "serve-favicon": "^2.3.2",
     "socket.io": "^2.0.3",
-    "speaker": "^0.3.0",
     "unix-time": "^1.0.1",
     "util": "^0.10.3",
     "wav": "^1.0.1"

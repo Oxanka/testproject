@@ -8,7 +8,6 @@
     "db": {
       "dbUrl": "mysql://root:@localhost:3306/itconference",
       "password": "root"
-
     }
   },
   "prod": {

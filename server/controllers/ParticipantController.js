@@ -27,6 +27,7 @@ function createParticipant(req, res, next) {
         });
 
 }
+
 function getParticipant(req, res, next) {
     Participant.findAll({
         where: {
@@ -39,9 +40,11 @@ function getParticipant(req, res, next) {
             return res.status(500).json("Error" + err);
         });
 }
+
 function getOneParticipant(req, res, next) {
-    var idParticipant = req.body.idParticipant;
+    var idParticipant = req.query.idParticipant;
     Participant.findOne({
+
         where: {
             id: idParticipant,
             active: 1
@@ -56,7 +59,7 @@ function getOneParticipant(req, res, next) {
 }
 
 function editParticipant(req, res, next) {
-    var userInfo = req.body.userInfo;
+    var userInfo = req.body;
     Participant.update({
             name: userInfo.name,
             surname: userInfo.surname,
@@ -65,21 +68,21 @@ function editParticipant(req, res, next) {
         },
         {
             where: {
-                id: userInfo.idParticipant
+                id: userInfo.id
             }
         }
     )
         .then(function (updateUser) {
-            return res.status(200).json("user delete");
+            return res.status(200).json("user update");
         }, function (err) {
             return res.status(500).json("Error" + err);
         });
 }
 
 function deleteParticipant(req, res, next) {
-    var idParticipant = req.body.idParticipant;
+    var idParticipant = req.query.idParticipant;
     Participant.update({
-        active: 0
+            active: 0
         },
         {
             where: {
@@ -93,7 +96,6 @@ function deleteParticipant(req, res, next) {
             return res.status(500).json("Error" + err);
         });
 }
-
 
 
 module.exports.createParticipant = createParticipant;

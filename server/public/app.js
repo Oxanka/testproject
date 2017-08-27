@@ -28,12 +28,18 @@ angular.module('myApp', [
         $routeProvider.when('/users/:id',
             {
                 templateUrl: 'oneUser/oneUser.html',
-                controller: 'OneUserCtrl'
+                controller: 'OneUserCtrl',
+                resolve:{
+                    id: function($route){ return $route.current.params.id }
+                }
             });
         $routeProvider.when('/groups/:id',
             {
                 templateUrl: 'oneGroup/oneGroup.html',
-                controller: 'OneGroupCtrl'
+                controller: 'OneGroupCtrl',
+                resolve:{
+                    id: function($route){ return $route.current.params.id }
+                }
             });
 
         $locationProvider.hashPrefix('!');

@@ -1,37 +1,85 @@
-    <div class="row">
+<div class="row">
+    <div class="one-row">
+        <h2 class="center_text">Participant list in conference</h2>
         <button class="btn btn-info btn-sm" type="button" data-toggle="modal" data-target="#myModal">Create</button>
     </div>
 
-    <div id="myModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
-                    <h4 class="modal-title">Add new user</h4>
+
+    <div class="table">
+        <div class="row">
+            <div class="col-md-1 form-group">
+                <label>№</label>
+            </div>
+            <div class="col-md-2 form-group">
+                <label>Participant name</label>
+            </div>
+            <div class="col-md-3 form-group">
+                <label>Participant email</label>
+            </div>
+            <div class="col-md-3 form-group">
+                <label>Participant phone</label>
+            </div>
+            <div class="col-md-3 form-group">
+
+            </div>
+        </div>
+
+
+        <div class="form-inline height_row" ng-repeat="user in users">
+            <div class="row table-tr">
+                <div class="col-md-1 form-group">
+                    <label> {{ $index+1 }}</label>
                 </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label>User name</label>
-                            <input type="text" class="form-control" ng-model="newUser.name" placeholder="User name">
-                        </div>
-                        <div class="form-group">
-                            <label>User surname</label>
-                            <input type="text" class="form-control" ng-model="newUser.surname" placeholder="User surname">
-                        </div>
-                        <div class="form-group">
-                            <label>User email</label>
-                            <input type="email" class="form-control" ng-model="newUser.email" placeholder="User email">
-                        </div>
-                        <div class="form-group">
-                            <label>User phone</label>
-                            <input type="tel" class="form-control" ng-model="newUser.phone" placeholder="User phone">
-                        </div>
-                    </form>
+                <div class="col-md-2 form-group">
+                    <label ng-click="openUserInfo(user)">{{user.name}} {{user.surname}} </label>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn btn-default" type="button" data-dismiss="modal" ng-click="save()">Save</button>
-                    <button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button>
+                <div class="col-md-3 form-group">
+                    <label>{{user.email}}</label>
                 </div>
+                <div class="col-md-3 form-group">
+                    <label>{{user.phone}}</label>
+                </div>
+                <div class="col-md-3 form-group">
+                    <button class="btn btn-danger"  ng-click="delete(user)">Delete participant</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Add new user</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>User name</label>
+                        <input type="text" class="form-control" ng-model="newUser.name" placeholder="User name">
+                    </div>
+                    <div class="form-group">
+                        <label>User surname</label>
+                        <input type="text" class="form-control" ng-model="newUser.surname" placeholder="User surname">
+                    </div>
+                    <div class="form-group">
+                        <label>User email</label>
+                        <input type="email" class="form-control" ng-model="newUser.email" placeholder="User email">
+                    </div>
+                    <div class="form-group">
+                        <label>User phone</label>
+                        <input type="tel" class="form-control" ng-model="newUser.phone" placeholder="User phone">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="button" data-dismiss="modal" ng-click="save()">Save</button>
+                <button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button>
             </div>
         </div>
     </div>
+</div>
