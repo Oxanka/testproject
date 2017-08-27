@@ -6,10 +6,32 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
-                    <h4 class="modal-title">Заголовок окна</h4>
+                    <h4 class="modal-title">Add new user</h4>
                 </div>
-                <div class="modal-body">Текст уведомления</div>
-                <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button></div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label>User name</label>
+                            <input type="text" class="form-control" ng-model="newUser.name" placeholder="User name">
+                        </div>
+                        <div class="form-group">
+                            <label>User surname</label>
+                            <input type="text" class="form-control" ng-model="newUser.surname" placeholder="User surname">
+                        </div>
+                        <div class="form-group">
+                            <label>User email</label>
+                            <input type="email" class="form-control" ng-model="newUser.email" placeholder="User email">
+                        </div>
+                        <div class="form-group">
+                            <label>User phone</label>
+                            <input type="tel" class="form-control" ng-model="newUser.phone" placeholder="User phone">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal" ng-click="save()">Save</button>
+                    <button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button>
+                </div>
             </div>
         </div>
     </div>

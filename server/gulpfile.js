@@ -18,18 +18,19 @@ var path = {
         style: 'public/less/app.less'
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
-        style: 'public/less/app.less'
+        style: 'public/less/*.less'
     }
 };
 
-gulp.task('style:build', function () {
+gulp.task('style:build', function (done) {
     gulp.src(path.src.style) //Выберем наш main.scss
         .pipe(sourcemaps.init())
         .pipe(less()) //Скомпилируем
         .pipe(cssmin()) //Сожмем
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css)) //И в build
-        .pipe(reload({stream: true}));
+        //.pipe(reload({stream: true}));
+        done();
 });
 
 gulp.task('watch', function(){

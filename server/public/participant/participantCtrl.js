@@ -6,9 +6,16 @@ angular.module('myApp.participant', ['ngRoute'])
 
         Participant.getParticipants();
 
-        $scope.openModal = function () {
-            // $('body');
-            // $('#myModal').modal(options)
-            // $("#myModal").modal('show');
+
+        $scope.newUser = {
+            name: "",
+            surname: "",
+            email: "",
+            phone: ""
+        }
+
+        $scope.save = function(){
+            console.log($scope.newUser);
+            Participant.createUser($scope.newUser);
         }
     });

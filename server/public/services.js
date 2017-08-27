@@ -11,7 +11,7 @@ angular.module('myApp.services', [])
             })
         };
 
-        var createUser = function () {
+        var createUser = function (user) {
 
         }
 
